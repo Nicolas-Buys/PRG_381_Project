@@ -17,4 +17,15 @@ public class Methods {
 
       return numberOfpeople;
    }
+   private static boolean validatePhoneNumber(String phoneNumber){
+    String patterns 
+    = "^(\\+\\d{1,3}( )?)?((\\(\\d{3}\\))|\\d{3})[- .]?\\d{3}[- .]?\\d{4}$" 
+    + "|^(\\+\\d{1,3}( )?)?(\\d{3}[ ]?){2}\\d{3}$" 
+    + "|^(\\+\\d{1,3}( )?)?(\\d{3}[ ]?)(\\d{2}[ ]?){2}\\d{2}$";
+    if(phoneNumber.matches(patterns))
+        return true;
+    else
+        return false;
+   }
+
 }
