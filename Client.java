@@ -4,6 +4,8 @@ public class Client {
     String cellNumber;
 
     public void Client(String n, String s, String c){
-        
+        this.name = n;
+        this.surname = s;
+        this.cellNumber = c;
     }
 }
