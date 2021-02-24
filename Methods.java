@@ -11,4 +11,10 @@ public class Methods {
          System.out.println("Name and Surname recorded");
       }
    }
+
+   public int numberOfpeople(int NOK, int NOA){
+      int numberOfpeople = NOK + NOA;
+
+      return numberOfpeople;
+   }
 }
