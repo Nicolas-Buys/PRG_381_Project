@@ -1,11 +1,13 @@
 public class Client {
-    String name;
-    String surname;
-    String cellNumber;
+    String name, surname, cellNumber;
 
-    public void Client(String n, String s, String c){
+    public Client(String n, String s, String c){
         this.name = n;
         this.surname = s;
         this.cellNumber = c;
+    }
+
+    public Client(){
+
     }
 }
