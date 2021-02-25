@@ -9,18 +9,23 @@ public class Database {
             + "password=u9581abc;"
             + "encrypt=true;"
             + "trustServerCertificate=false;"
-            + "loginTimeout=30;";
-    try (Connection connection = DriverManager.getConnection(connectionUrl);) {
+            + "loginTimeout=30;"; 
+    ResultSet resultSet = null;
+    {
+    try (Connection connection = DriverManager.getConnection(connectionUrl);
+    Statement statement = connection.createStatement();) {
             // Code here.
             String selectSql = "SELECT * from dbo.AdultMeals";
             resultSet = statement.executeQuery(selectSql);
-
             // Print results from select statement
             while (resultSet.next()) {
                 System.out.println(resultSet.getString(2) + " " + resultSet.getString(3));
         }
+    }
         // Handle any errors that may have occurred.
     catch (SQLException e) {
         e.printStackTrace();
-
+    }
 }
+}
+
