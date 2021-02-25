@@ -5,6 +5,9 @@ import java.util.*;
 public class Methods {
    //TODO enter processing methods here 
 
+   
+
+   
    public void ClientValidate(String name, String surname, String CNumber){
       if (name.isEmpty() || surname.isEmpty()) {
          System.out.println("Name or Surname is empty");
@@ -35,6 +38,13 @@ public class Methods {
       cList.add(new Client(n, s, c));
 
       return cList;
+   }
+
+  public  List<Event> eventList = new ArrayList<Event>();  // Puts the event into a list 
+   public List<Event> getevetn(Event event)
+   {
+      eventList.add(event);
+      return eventList;
    }
 
 }
