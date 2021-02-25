@@ -1,7 +1,8 @@
-package ApplicationLayer;
+package BusinessLogicLayer;
 
 import java.sql.Date;
-
+import java.util.ArrayList;
+import java.util.List;
 public class Event {
 
  private String eventType,address,veneuName,cellNumber,foodSelection,decorations;
@@ -102,9 +103,10 @@ public class Event {
      }
 
 
+     
+     
 
-
- 
+    
  
 
     public Event(String EventType, String Address,String VeneuName,String CellNumber,String FoodSelection,String Decorations,String DateT,int NumberOfpeople,int NumberOfkids,int NumberOfAdults )
@@ -125,6 +127,10 @@ public class Event {
 
     }
 
+  
+
+   
+    
 
  
 
