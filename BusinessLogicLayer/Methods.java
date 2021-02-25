@@ -47,11 +47,11 @@ public class Methods {
       return eventList;
    }
 
-   double discount;      //Calculates Discount
+   public double discount;      // Calculates Discount
  
    public double calculateDiscount(int numberOfpeople) 
    {
-     if (numberOfpeople >= 40 )
+     if (numberOfpeople > 40 )
      {
         discount =15;
         return discount;
@@ -64,6 +64,6 @@ public class Methods {
    }
 
 
-   
+
 
 }
