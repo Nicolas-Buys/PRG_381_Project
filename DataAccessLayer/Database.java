@@ -24,7 +24,7 @@ public class Database {
     }
         // Handle any errors that may have occurred.
     catch (SQLException e) {
-        e.printStackTrace();
+        System.out.println("its not working");
     }
     }
     
