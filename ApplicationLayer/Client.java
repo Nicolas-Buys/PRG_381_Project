@@ -1,10 +1,6 @@
-<<<<<<< HEAD:Application layer/Client.java
- import java.util.*;
-=======
 package ApplicationLayer;
 
 import java.util.*;
->>>>>>> bb2c5440c6d9c8fc9ef16b61d9f0413930a4d11c:ApplicationLayer/Client.java
 
 public class Client {
     String name, surname, cellNumber;

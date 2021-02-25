@@ -40,4 +40,11 @@ public class Methods {
       return cList;
    }
 
+  public  List<Event> eventList = new ArrayList<Event>();  // Puts the event into a list 
+   public List<Event> getevetn(Event event)
+   {
+      eventList.add(event);
+      return eventList;
+   }
+
 }
