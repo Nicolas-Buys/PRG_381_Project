@@ -1,3 +1,5 @@
+package ApplicationLayer;
+
 import java.util.*;
 
 public class Methods {
@@ -19,7 +21,7 @@ public class Methods {
 
       return numberOfpeople;
    }
-   public static boolean validatePhoneNumber(String phoneNumber){
+   public boolean validatePhoneNumber(String phoneNumber){
     String patterns 
     = "^(\\+\\d{1,3}( )?)?((\\(\\d{3}\\))|\\d{3})[- .]?\\d{3}[- .]?\\d{4}$" 
     + "|^(\\+\\d{1,3}( )?)?(\\d{3}[ ]?){2}\\d{3}$" 
@@ -28,6 +30,14 @@ public class Methods {
         return true;
     else
         return false;
+   }
+
+   public List<Client> getClient(String n, String s, String c){
+      List<Client> cList = new ArrayList<Client>();
+
+      cList.add(new Client(n, s, c));
+
+      return cList;
    }
 
 }
