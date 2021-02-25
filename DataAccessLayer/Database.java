@@ -12,6 +12,12 @@ public class Database {
             + "loginTimeout=30;";
     try (Connection connection = DriverManager.getConnection(connectionUrl);) {
             // Code here.
+            String selectSql = "SELECT * from dbo.AdultMeals";
+            resultSet = statement.executeQuery(selectSql);
+
+            // Print results from select statement
+            while (resultSet.next()) {
+                System.out.println(resultSet.getString(2) + " " + resultSet.getString(3));
         }
         // Handle any errors that may have occurred.
     catch (SQLException e) {
