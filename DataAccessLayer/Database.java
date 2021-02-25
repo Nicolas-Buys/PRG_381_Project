@@ -11,9 +11,9 @@ public class Database {
             + "trustServerCertificate=false;"
             + "loginTimeout=30;"; 
     ResultSet resultSet = null;
-    {
-    try (Connection connection = DriverManager.getConnection(connectionUrl);
-    Statement statement = connection.createStatement();) {
+    public void Databasetest() {
+        try (Connection connection = DriverManager.getConnection(connectionUrl);
+        Statement statement = connection.createStatement();) {
             // Code here.
             String selectSql = "SELECT * from dbo.AdultMeals";
             resultSet = statement.executeQuery(selectSql);
@@ -26,6 +26,8 @@ public class Database {
     catch (SQLException e) {
         e.printStackTrace();
     }
+    }
+    
 }
-}
+
 
