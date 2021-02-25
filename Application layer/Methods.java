@@ -27,4 +27,12 @@ public class Methods {
         return false;
    }
 
+   public List<Client> getClient(String n, String s, String c){
+      List<Client> cList = new ArrayList<Client>();
+
+      cList.add(new Client(n, s, c));
+
+      return cList;
+   }
+
 }

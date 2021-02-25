@@ -39,12 +39,4 @@ public class Client {
     public Client(){
 
     }
-
-    public List<Client> GetClient(List<Client> clientList){
-        List<Client> ClientList = new ArrayList<Client>();
-        
-        ClientList = clientList;
-
-        return ClientList;
-    }
 }
