@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 public class Event {
 
- private String eventType,address,veneuName,cellNumber,foodSelection,decorations;
+ private String eventType,address,venueName,cellNumber,foodSelection,decorations;
  private String dateT;
  private int numberOfpeople,numberOfkids,numberOfAdults;// Number of people = number of kids + number of adults 
  
@@ -32,11 +32,11 @@ public class Event {
 
      public String veneuName()
      {
-        return veneuName;
+        return venueName;
      }   
      public void veneuName(String veneuName)
      {
-         this.veneuName = veneuName;
+         this.venueName = veneuName;
      }
 
      public String cellNumber()
@@ -109,12 +109,12 @@ public class Event {
     
  
 
-    public Event(String EventType, String Address,String VeneuName,String CellNumber,String FoodSelection,String Decorations,String DateT,int NumberOfpeople,int NumberOfkids,int NumberOfAdults )
+    public Event(String EventType, String Address,String VenueName,String CellNumber,String FoodSelection,String Decorations,String DateT,int NumberOfpeople,int NumberOfkids,int NumberOfAdults )
     {
 
         eventType = EventType;
         address = Address;
-        veneuName = VeneuName;
+        venueName = VenueName;
         cellNumber = CellNumber;
         foodSelection = FoodSelection;
         decorations = Decorations;                       //  Constructor for event

@@ -16,6 +16,8 @@ public class Methods {
       } 
    }
  
+   //NOK = Number of kids
+   //NOA = Number of adults
    public int numberOfpeople(int NOK, int NOA){
       int numberOfpeople = NOK + NOA;
 
