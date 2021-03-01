@@ -31,13 +31,13 @@ public class Event {
          this.address = address;
      }
 
-     public String veneuName()
+     public String venueName()
      {
         return venueName;
      }   
-     public void veneuName(String veneuName)
+     public void veneuName(String venueName)
      {
-         this.venueName = veneuName;
+         this.venueName = venueName;
      }
 
      public String cellNumber()
