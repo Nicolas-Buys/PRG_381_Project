@@ -62,7 +62,7 @@ public class Methods {
      }
      else
      {
-      discount = (numberOfpeople * mealPrice);
+      discount = 0;
         return discount;
      }
    }
