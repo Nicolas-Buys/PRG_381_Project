@@ -68,7 +68,7 @@ public class Methods {
    }
 
 
-   public List<Client> getclient(List<Client> cList){
+   public List<Client> getclientList(List<Client> cList){
       List<Client> clientList = new ArrayList<Client>();
 
       for(Client item : cList){

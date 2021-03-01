@@ -30,7 +30,7 @@ public static void main(String[] args) {
             System.out.println("Empty fields or incorrect cellphone number format");
         }
         
-        
+        method.getclientList(cList);
         
         System.out.println("===============| Welcome |===============");
         System.out.println("Do you want to place a booking? (yes/no)");
@@ -55,6 +55,8 @@ public static void main(String[] args) {
             System.out.println("How many Kids attending?");
             int numOfKids = input.nextInt();
 
+            int numberOfpeople = method.numberOfpeople(numOfKids, numOfAdult);
+
             System.out.println("Food- selection from the menu (Adults Meal- Kids Meal- Drinks- Dessert etc.");
             String foodselection = input.nextLine();
 
@@ -68,7 +70,8 @@ public static void main(String[] args) {
                 decorAdded = "none";
             }
 
-            //Insert validation
+            System.out.println("Your discount is: ");
+            double discount = method.calculateDiscount(numberOfpeople);
 
         }
         else{
