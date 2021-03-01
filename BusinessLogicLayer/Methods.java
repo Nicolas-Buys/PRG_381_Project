@@ -68,6 +68,14 @@ public class Methods {
    }
 
 
+   public List<Client> getclient(List<Client> cList){
+      List<Client> clientList = new ArrayList<Client>();
 
+      for(Client item : cList){
+         clientList.add(new Client(item.name, item.surname, item.cellNumber));
+      }
+
+      return clientList;
+   }
 
 }
