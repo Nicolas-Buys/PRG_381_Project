@@ -1,12 +1,9 @@
 package PresentationLayer;
-<<<<<<< HEAD
 import DataAccessLayer.*;
 
 import java.lang.reflect.Method;
 import java.util.*;
 
-=======
->>>>>>> effada7b437f0ddf06349a0143ce4a3f99c70acc
 import BusinessLogicLayer.*;
 public class mainfile{
     
@@ -48,12 +45,6 @@ public static void main(String[] args) {
             System.out.println("Thank you for the response!");
             System.out.println("Enjoy the rest of your day!");
         }
-
-        
-
-        Database database = new Database();
-        database.Databasetest();
-            
     
 }
 }
