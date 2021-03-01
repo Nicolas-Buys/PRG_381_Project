@@ -1,12 +1,8 @@
 package PresentationLayer;
-<<<<<<< HEAD
-import DataAccessLayer.*;
 
-import java.lang.reflect.Method;
-import java.util.*;
+import java.util.List;
+import java.util.Scanner;
 
-=======
->>>>>>> effada7b437f0ddf06349a0143ce4a3f99c70acc
 import BusinessLogicLayer.*;
 public class mainfile{
     

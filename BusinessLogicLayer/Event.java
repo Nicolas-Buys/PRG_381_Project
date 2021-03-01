@@ -7,6 +7,7 @@ public class Event {
 
  private String eventType,address,venueName,cellNumber,foodSelection,decorations;
  private String dateT;
+ private boolean confirm;
  private int numberOfpeople,numberOfkids,numberOfAdults;// Number of people = number of kids + number of adults 
  
 
@@ -102,14 +103,21 @@ public class Event {
          this.numberOfAdults = numberOfAdults;
      }
 
-
+     public boolean confirm()
+     {
+        return confirm;
+     }   
+     public void confirm(boolean eventType)
+     {
+         this.confirm = confirm;
+     }
      
      
 
     
  
 
-    public Event(String EventType, String Address,String VenueName,String CellNumber,String FoodSelection,String Decorations,String DateT,int NumberOfpeople,int NumberOfkids,int NumberOfAdults )
+    public Event(String EventType, String Address,String VenueName,String CellNumber,String FoodSelection,String Decorations,String DateT,int NumberOfpeople,int NumberOfkids,int NumberOfAdults,boolean Confirm )
     {
 
         eventType = EventType;
@@ -122,6 +130,7 @@ public class Event {
         numberOfpeople = NumberOfpeople;
         numberOfkids = NumberOfkids;
         numberOfAdults = NumberOfAdults;
+        confirm = Confirm;
 
 
 
