@@ -40,6 +40,36 @@ public static void main(String[] args) {
         if(option.toUpperCase() == "YES"){
             System.out.println("===============| Booking |===============");
 
+            System.out.println("Type of event? Wedding/ birthday parties etc.");
+            String eventtype = input.nextLine();
+
+            System.out.println("Event date and time? (The system must check the availability of the date.)");
+            String date = input.nextLine();
+
+            System.out.println("Event venue address? Capture details including phone number");
+            String address = input.nextLine();
+
+            System.out.println("How many Adults attending?");
+            int numOfAdult = input.nextInt();
+
+            System.out.println("How many Kids attending?");
+            int numOfKids = input.nextInt();
+
+            System.out.println("Food- selection from the menu (Adults Meal- Kids Meal- Drinks- Dessert etc.");
+            String foodselection = input.nextLine();
+
+            System.out.println("Any decorations?(yes/no)");
+            String decor = input.nextLine();
+            String decorAdded;
+            if (decor.toUpperCase() == "YES") {
+                System.out.println("What decorations do you want to add?");
+                decorAdded = input.nextLine();
+            } else {
+                decorAdded = "none";
+            }
+
+            //Insert validation
+
         }
         else{
             System.out.println("Thank you for the response!");
