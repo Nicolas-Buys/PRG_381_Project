@@ -5,15 +5,16 @@ import java.util.*;
 public class Methods {
    //TODO enter processing methods here 
 
-   
+   public Methods(){}
 
    
-   public void ClientValidate(String name, String surname, String CNumber){
-      if (name.isEmpty() || surname.isEmpty()) {
-         System.out.println("Name or Surname is empty");
-      } else {
-         System.out.println("Name and Surname recorded");
-      } 
+   public boolean ClientValidate(String name, String surname, String cellnum){
+      if (name.isEmpty() || surname.isEmpty() || cellnum.isEmpty() || validatePhoneNumber(cellnum) == false) {
+         return false;
+      }
+      else{
+         return true;  
+      }
    }
  
    //NOK = Number of kids
