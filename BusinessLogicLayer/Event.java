@@ -1,8 +1,8 @@
 package BusinessLogicLayer;
 
-import java.sql.Date;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.*;
+import java.util.*;
+import DataAccessLayer.*;
 public class Event {
 
  private String eventType,address,venueName,cellNumber,foodSelection,decorations;
