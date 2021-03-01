@@ -107,7 +107,7 @@ public class Event {
      {
         return confirm;
      }   
-     public void confirm(boolean eventType)
+     public void confirm(boolean eventType)    // Confirm Bookings
      {
          this.confirm = confirm;
      }
