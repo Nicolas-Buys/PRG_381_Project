@@ -53,16 +53,16 @@ public class Methods {
 
    public double discount;      // Calculates Discount
  
-   public double calculateDiscount(int numberOfpeople) 
+   public double calculateDiscount(int numberOfpeople, double mealPrice) 
    {
      if (numberOfpeople > 40 )
      {
-        discount =15;
+        discount = (numberOfpeople * mealPrice) * 0.85;
         return discount;
      }
      else
      {
-        discount =0;
+      discount = (numberOfpeople * mealPrice);
         return discount;
      }
    }
