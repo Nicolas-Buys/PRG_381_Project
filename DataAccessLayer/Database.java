@@ -1,6 +1,10 @@
 package DataAccessLayer;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import BusinessLogicLayer.Client;
 public class Database {
     String connectionUrl = "jdbc:sqlserver://105.186.136.224:1433;"
     + "instanceName=mssqlserver;"
@@ -25,6 +29,13 @@ public class Database {
             e.printStackTrace();
         }
     }
+
+    public void getListofCliet(List<Client> cl){
+        List<Client> clientList = new ArrayList<>();
+
+        clientList = cl;
+    }
+
     
 }
 
