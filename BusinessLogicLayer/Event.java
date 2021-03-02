@@ -5,7 +5,7 @@ import java.util.*;
 import DataAccessLayer.*;
 public class Event {
 
- private String eventType,address,venueName,cellNumber,decorations;
+ private String eventType,address,decorations;
  private String dateT;
  private boolean confirm;
  private double price;
