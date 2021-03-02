@@ -77,10 +77,11 @@ public static void main(String[] args) {
             String confirmAns= input.nextLine();
             if (confirmAns.equals("yes"))
             {
+                double price = 1000.00;
                 boolean confirmed = true;
-                List<Event> eList = new ArrayList<Event>();
-                eList.add(new Event(eventtype,10000 , address,foodselection,decor, date, numberOfpeople, numOfKids ,numOfAdult,confirmed));
-                    
+                
+                method.getEvent(eventtype,price, address, foodselection, decor, date, numberOfpeople,numOfKids, numOfAdult, confirmed);
+                
             }
            
             //calling a method to calculate if the user gets a discount
