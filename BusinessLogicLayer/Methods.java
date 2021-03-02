@@ -70,4 +70,10 @@ public class Methods {
       db.getListofCliet(cList);
    }
 
+
+   public void geteventList(List<Event> eList)
+   {
+      db.getListofEvent(eList);
+   }
+
 }

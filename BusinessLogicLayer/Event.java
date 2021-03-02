@@ -8,6 +8,7 @@ public class Event {
  private String eventType,address,venueName,cellNumber,foodSelection,decorations;
  private String dateT;
  private boolean confirm;
+ private double price;
  private int numberOfpeople,numberOfkids,numberOfAdults;// Number of people = number of kids + number of adults 
  
 
@@ -21,7 +22,16 @@ public class Event {
      {
          this.eventType = eventType;
      }
-
+    
+     public double getprice()
+     {
+        return price;
+     }   
+     public void setPrice(double price)
+     {
+         this.price = price;
+     }
+     
      public String address()
      {
         return address;
@@ -31,23 +41,6 @@ public class Event {
          this.address = address;
      }
 
-     public String venueName()
-     {
-        return venueName;
-     }   
-     public void veneuName(String venueName)
-     {
-         this.venueName = venueName;
-     }
-
-     public String cellNumber()
-     {
-        return cellNumber;
-     }   
-     public void cellNumber(String cellNumber)
-     {
-         this.cellNumber = cellNumber;
-     }
 
      public String decorations()
      {
@@ -86,12 +79,10 @@ public class Event {
      }
      
 
-    public Event(String EventType, String Address,String VenueName,String CellNumber,String FoodSelection,String Decorations,String DateT,int NumberOfpeople,int NumberOfkids,int NumberOfAdults,boolean Confirm )
+    public Event(String EventType,double Price, String Address,String FoodSelection,String Decorations,String DateT,int NumberOfpeople,int NumberOfkids,int NumberOfAdults,boolean Confirm )
     {
         eventType = EventType;
         address = Address;
-        venueName = VenueName;
-        cellNumber = CellNumber;
         foodSelection = FoodSelection;
         decorations = Decorations;                       //  Constructor for event
         dateT = DateT;
