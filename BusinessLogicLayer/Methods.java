@@ -41,8 +41,8 @@ public class Methods {
       database.clientAdd(n, s, c);//calling method in data link layer
    }
 
-   public void getEvent(String eventtype,double price,String foodeselection,String decor,String date,String numberofpeople,String numberOfkids,boolean confirmed){
-      
+   public void getEvent(String eventtype,double price,String address,String foodeselection,String decor,String date,int numberofpeople,int numberOfkids,int numberOfAdults,boolean confirmed){
+
    }
 
    
@@ -70,5 +70,16 @@ public class Methods {
      }
    }
 
+
+   Database db = new Database();
+   public void getclientList(List<Client> cList){
+      db.getListofCliet(cList);
+   }
+
+
+   public void geteventList(List<Event> eList)
+   {
+      db.getListofEvent(eList);
+   }
 
 }
