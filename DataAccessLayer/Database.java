@@ -36,6 +36,18 @@ public class Database {
 
         clientList = cl;
     }
+    public void clientAdd(String n, String s, String c){ //method to add client in database
+        try (Connection connection = DriverManager.getConnection(connectionUrl);
+        Statement statement = connection.createStatement();){
+            String selectSql = "INSERT INTO [dbo].[Client] (Name, Surname, Phone) VALUES (\'"+n+"\', \'"+s+"\', \'"+c+"\');";
+            int res = statement.executeUpdate(selectSql);
+            System.out.println("Client added. "+res+" rows updated");
+        }
+            catch (SQLException e){
+                System.out.println("its not working");
+                e.printStackTrace();
+            }     
+    }    
 
     public void getListofEvent(List<Event> el){
         

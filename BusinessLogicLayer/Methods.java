@@ -6,6 +6,7 @@ import DataAccessLayer.*;
 public class Methods {
    //TODO enter processing methods here 
 
+   Database database = new Database();
    public Methods(){}
 
    //method to validate the client info
@@ -35,6 +36,10 @@ public class Methods {
         return true;
     else
         return false;
+   }
+
+   public void getClient(String n, String s, String c){//method called in mainfile
+      database.clientAdd(n, s, c);//calling method in data link layer
    }
 
   public  List<Event> eventList = new ArrayList<Event>();  // Puts the event into a list 
