@@ -14,6 +14,7 @@ public static void main(String[] args) {
         System.out.println("====================| Delicious Catering |====================");
         System.out.println("To login! Please provide the information for the following fields:");
         
+        //Gather client information to log in
         System.out.println("Please provide your name:");
         String name = input.nextLine();
         
@@ -23,6 +24,7 @@ public static void main(String[] args) {
         System.out.println("Please provide your cellphone number");
         String cellnum = input.nextLine();
 
+        //Validating if the user provided adequete information and adding it to a list
         List<Client> cList = new ArrayList<Client>();
         if (method.ClientValidate(name, surname, cellnum) == true) {
             cList.add(new Client(name, surname, cellnum));
@@ -37,6 +39,7 @@ public static void main(String[] args) {
         
         String option = input.nextLine();
 
+        //gathering information from the user if they want to place a booking
         if(option.toUpperCase() == "YES"){
             System.out.println("===============| Booking |===============");
 
@@ -60,6 +63,7 @@ public static void main(String[] args) {
             System.out.println("Food- selection from the menu (Adults Meal- Kids Meal- Drinks- Dessert etc.");
             String foodselection = input.nextLine();
 
+            //if the user wants to add decoration or not with the appropriate responses
             System.out.println("Any decorations?(yes/no)");
             String decor = input.nextLine();
             String decorAdded;
@@ -70,6 +74,7 @@ public static void main(String[] args) {
                 decorAdded = "none";
             }
 
+            //calling a method to calculate if the user gets a discount
             System.out.println("Your discount is: ");
             double discount = method.calculateDiscount(numberOfpeople);
 
