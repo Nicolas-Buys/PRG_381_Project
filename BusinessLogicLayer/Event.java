@@ -49,15 +49,6 @@ public class Event {
          this.cellNumber = cellNumber;
      }
 
-     public String foodSelection()
-     {
-        return foodSelection;
-     }   
-     public void foodSelection(String foodSelection)
-     {
-         this.foodSelection = foodSelection;
-     }
-
      public String decorations()
      {
         return decorations;
@@ -74,24 +65,6 @@ public class Event {
      public void dateT(String dateT)
      {
          this.dateT = dateT;
-     }
-
-     public int numberOfpeople()
-     {
-        return numberOfpeople;
-     }   
-     public void numberOfpeople(int numberOfpeople)
-     {
-         this.numberOfpeople = numberOfpeople;
-     }
-
-     public int numberOfkids()
-     {
-        return numberOfkids;
-     }   
-     public void numberOfkids(int numberOfkids)
-     {
-         this.numberOfkids = numberOfkids;
      }
 
      public int numberOfAdults()
@@ -112,14 +85,9 @@ public class Event {
          this.confirm = confirm;
      }
      
-     
-
-    
- 
 
     public Event(String EventType, String Address,String VenueName,String CellNumber,String FoodSelection,String Decorations,String DateT,int NumberOfpeople,int NumberOfkids,int NumberOfAdults,boolean Confirm )
     {
-
         eventType = EventType;
         address = Address;
         venueName = VenueName;
@@ -131,19 +99,5 @@ public class Event {
         numberOfkids = NumberOfkids;
         numberOfAdults = NumberOfAdults;
         confirm = Confirm;
-
-
-
     }
-
-  
-
-   
-    
-
- 
-
-
-
-    
 }
