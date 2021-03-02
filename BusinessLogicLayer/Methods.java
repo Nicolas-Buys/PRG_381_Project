@@ -70,16 +70,4 @@ public class Methods {
      }
    }
 
-
-   Database db = new Database();
-   public void getclientList(List<Client> cList){
-      db.getListofCliet(cList);
-   }
-
-
-   public void geteventList(List<Event> eList)
-   {
-      db.getListofEvent(eList);
-   }
-
 }
