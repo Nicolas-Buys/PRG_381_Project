@@ -9,7 +9,7 @@ public class Methods {
    Database database = new Database();
    public Methods(){}
 
-   //method to validate the client info
+   
    public boolean ClientValidate(String name, String surname, String cellnum){
       if (name.isEmpty() || surname.isEmpty() || cellnum.isEmpty() || validatePhoneNumber(cellnum) == false) {
          return false;
@@ -26,7 +26,6 @@ public class Methods {
 
       return numberOfpeople;
    }
-   //method to validate the client phone number
    public boolean validatePhoneNumber(String phoneNumber){
     String patterns 
     = "^(\\+\\d{1,3}( )?)?((\\(\\d{3}\\))|\\d{3})[- .]?\\d{3}[- .]?\\d{4}$" 
@@ -41,6 +40,12 @@ public class Methods {
    public void getClient(String n, String s, String c){//method called in mainfile
       database.clientAdd(n, s, c);//calling method in data link layer
    }
+
+   public void getEvent(String eventtype,double price,String foodeselection,String decor,String date,String numberofpeople,String numberOfkids,boolean confirmed){
+      
+   }
+
+   
 
   public  List<Event> eventList = new ArrayList<Event>();  // Puts the event into a list 
    public List<Event> getevetn(Event event)
@@ -65,7 +70,13 @@ public class Methods {
      }
    }
 
-   
+
+   Database db = new Database();
+   public void getclientList(List<Client> cList){
+      db.getListofCliet(cList);
+   }
+
+
    public void geteventList(List<Event> eList)
    {
       db.getListofEvent(eList);
