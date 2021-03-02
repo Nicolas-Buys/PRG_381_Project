@@ -5,11 +5,11 @@ import java.util.*;
 import DataAccessLayer.*;
 public class Event {
 
- private String eventType,address,venueName,cellNumber,foodSelection,decorations;
+ private String eventType,address,venueName,cellNumber,decorations;
  private String dateT;
  private boolean confirm;
  private double price;
- private int numberOfpeople,numberOfkids,numberOfAdults;// Number of people = number of kids + number of adults 
+ private int numberOfPeople;// Number of people = number of kids + number of adults 
  
 
     //Properties
@@ -60,13 +60,13 @@ public class Event {
          this.dateT = dateT;
      }
 
-     public int numberOfAdults()
+     public int numberOfPeople()
      {
-        return numberOfAdults;
+        return numberOfPeople;
      }   
-     public void numberOfAdults(int numberOfAdults)
+     public void numberOfPeople(int numberOfPeople)
      {
-         this.numberOfAdults = numberOfAdults;
+         this.numberOfPeople = numberOfPeople;
      }
 
      public boolean confirm()
@@ -79,16 +79,13 @@ public class Event {
      }
      
 
-    public Event(String EventType,double Price, String Address,String FoodSelection,String Decorations,String DateT,int NumberOfpeople,int NumberOfkids,int NumberOfAdults,boolean Confirm )
+    public Event(String EventType,double Price, String Address,String FoodSelection,String Decorations,String DateT,int NumberOfpeople,boolean Confirm )
     {
         eventType = EventType;
         address = Address;
-        foodSelection = FoodSelection;
         decorations = Decorations;                       //  Constructor for event
         dateT = DateT;
-        numberOfpeople = NumberOfpeople;
-        numberOfkids = NumberOfkids;
-        numberOfAdults = NumberOfAdults;
+        numberOfPeople = NumberOfpeople;
         confirm = Confirm;
     }
 }
