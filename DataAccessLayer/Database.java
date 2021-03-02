@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import BusinessLogicLayer.Client;
+import BusinessLogicLayer.Event;
 public class Database {
     String connectionUrl = "jdbc:sqlserver://105.186.136.224:1433;"
     + "instanceName=mssqlserver;"
@@ -36,6 +37,11 @@ public class Database {
         clientList = cl;
     }
 
+    public void getListofEvent(List<Event> el){
+        
+        List<Event> eventList = new ArrayList<>();
+        eventList =el;
+    }
     
 }
 

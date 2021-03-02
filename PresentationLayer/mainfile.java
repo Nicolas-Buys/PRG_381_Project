@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import javax.swing.event.DocumentEvent.EventType;
+
 import BusinessLogicLayer.*;
 public class mainfile{
     
@@ -74,6 +76,16 @@ public static void main(String[] args) {
                 decorAdded = "none";
             }
 
+            System.out.println("Do you want to confirm your booking?(yes/no)");
+            String confirmAns= input.nextLine();
+            if (confirmAns.equals("yes"))
+            {
+                boolean confirmed = true;
+                List<Event> eList = new ArrayList<Event>();
+                eList.add(new Event(eventtype,10000 , address,foodselection,decor, date, numberOfpeople, numOfKids ,numOfAdult,confirmed));
+                    
+            }
+           
             //calling a method to calculate if the user gets a discount
             double discount = method.calculateDiscount(numberOfpeople);
             System.out.println("Your discount is: " + discount + "%");
@@ -86,11 +98,11 @@ public static void main(String[] args) {
 
         
 
-     
-            
+       
     
 }
 
-        List<Event> eList = new ArrayList<Event>();
+        
+        
         
 }

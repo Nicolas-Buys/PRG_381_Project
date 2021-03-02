@@ -83,8 +83,6 @@ public class Event {
     {
         eventType = EventType;
         address = Address;
-       
-    
         foodSelection = FoodSelection;
         decorations = Decorations;                       //  Constructor for event
         dateT = DateT;
