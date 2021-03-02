@@ -75,8 +75,8 @@ public static void main(String[] args) {
             }
 
             //calling a method to calculate if the user gets a discount
-            System.out.println("Your discount is: ");
             double discount = method.calculateDiscount(numberOfpeople);
+            System.out.println("Your discount is: " + discount + "%");
 
         }
         else{
