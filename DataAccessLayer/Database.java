@@ -44,11 +44,7 @@ public class Database {
             }     
     }    
 
-    public void getListofEvent(List<Event> el){
-        
-        List<Event> eventList = new ArrayList<>();
-        eventList =el;
-    }
+    
     
 }
 
