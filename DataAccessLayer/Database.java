@@ -31,11 +31,6 @@ public class Database {
         }
     }
 
-    public void getListofCliet(List<Client> cl){
-        List<Client> clientList = new ArrayList<>();
-
-        clientList = cl;
-    }
     public void clientAdd(String n, String s, String c){ //method to add client in database
         try (Connection connection = DriverManager.getConnection(connectionUrl);
         Statement statement = connection.createStatement();){

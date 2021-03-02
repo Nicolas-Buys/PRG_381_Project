@@ -27,15 +27,11 @@ public static void main(String[] args) {
         String cellnum = input.nextLine();
 
         //Validating if the user provided adequete information and adding it to a list
-        List<Client> cList = new ArrayList<Client>();
         if (method.ClientValidate(name, surname, cellnum) == true) {
-            cList.add(new Client(name, surname, cellnum));
             method.getClient(name, surname, cellnum); //Calling Method in business logic layer
         } else {
             System.out.println("Empty fields or incorrect cellphone number format");
         }
-        
-        method.getclientList(cList);
         
         System.out.println("===============| Welcome |===============");
         System.out.println("Do you want to place a booking? (yes/no)");
