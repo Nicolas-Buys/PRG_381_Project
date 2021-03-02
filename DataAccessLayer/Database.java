@@ -4,8 +4,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import BusinessLogicLayer.Client;
-import BusinessLogicLayer.Event;
 public class Database {
     String connectionUrl = "jdbc:sqlserver://105.186.136.224:1433;"
     + "instanceName=mssqlserver;"
@@ -37,6 +35,20 @@ public class Database {
             String selectSql = "INSERT INTO [dbo].[Client] (Name, Surname, Phone) VALUES (\'"+n+"\', \'"+s+"\', \'"+c+"\');";
             int res = statement.executeUpdate(selectSql);
             System.out.println("Client added. "+res+" rows updated");
+            connection.close();
+        }
+            catch (SQLException e){
+                System.out.println("its not working");
+                e.printStackTrace();
+            }     
+    }
+    public void eventAdd(String eventtype,double price,String foodeselection,String decor,String date,String numberofpeople,String numberOfkids,boolean confirmed){
+        try (Connection connection = DriverManager.getConnection(connectionUrl);
+        Statement statement = connection.createStatement();){
+            String selectSql = "INSERT INTO [dbo].[Bookings] () VALUES ();";
+            int res = statement.executeUpdate(selectSql);
+            System.out.println("Booking added. "+res+" row(s) updated");
+            connection.close();
         }
             catch (SQLException e){
                 System.out.println("its not working");
