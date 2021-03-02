@@ -8,7 +8,7 @@ public class Methods {
 
    public Methods(){}
 
-   
+   //method to validate the client info
    public boolean ClientValidate(String name, String surname, String cellnum){
       if (name.isEmpty() || surname.isEmpty() || cellnum.isEmpty() || validatePhoneNumber(cellnum) == false) {
          return false;
@@ -25,6 +25,7 @@ public class Methods {
 
       return numberOfpeople;
    }
+   //method to validate the client phone number
    public boolean validatePhoneNumber(String phoneNumber){
     String patterns 
     = "^(\\+\\d{1,3}( )?)?((\\(\\d{3}\\))|\\d{3})[- .]?\\d{3}[- .]?\\d{4}$" 
@@ -34,14 +35,6 @@ public class Methods {
         return true;
     else
         return false;
-   }
-
-   public List<Client> getClient(String n, String s, String c){
-      List<Client> cList = new ArrayList<Client>();
-
-      cList.add(new Client(n, s, c));
-
-      return cList;
    }
 
   public  List<Event> eventList = new ArrayList<Event>();  // Puts the event into a list 
