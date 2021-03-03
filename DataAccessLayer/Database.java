@@ -3,6 +3,7 @@ package DataAccessLayer;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.lang.*;
 
 public class Database {
     String connectionUrl = "jdbc:sqlserver://105.186.136.224:1433;"
@@ -42,55 +43,67 @@ public class Database {
                 e.printStackTrace();
             }     
     }
-    public void eventAdd(String eventtype,double price,String address,String foodeselection,String decor,String date,int numberofpeople,int numberOfkids,int numberOfAdults,boolean confirmed, String name){
+    public void eventAdd(String eventtype,double price,String address,String foodeselection,String decor,String date,int numberofpeople,int numberOfkids,int numberOfAdults,char confirmed, String name){
         try (Connection connection = DriverManager.getConnection(connectionUrl);
         Statement statement = connection.createStatement();){
             String selectSql = "SELECT AdultMealID FROM [dbo].[AdultMeals] WHERE Description = \'"+foodeselection+"\';";
             ResultSet resAdultFood = statement.executeQuery(selectSql);
-            int AdultMealID, KiddiesMealID, client, DecorID, EventID;
+            Integer AdultMealID = null, KiddiesMealID = null, client = null, DecorID = null, EventID = null;
             if (!resAdultFood.isBeforeFirst() ) {
-                AdultMealID = 0;
+                AdultMealID = null;
             } 
             else{
-                AdultMealID = resAdultFood.getInt(1);
+                while(resAdultFood.next()){
+                    AdultMealID = resAdultFood.getInt(1);
+                }  
             }
             selectSql = "SELECT KiddiesMealID FROM [dbo].[KiddiesMeal] WHERE Description = \'"+foodeselection+"\';";
             ResultSet resKidFood = statement.executeQuery(selectSql);
             if (!resKidFood.isBeforeFirst() ) {
-                KiddiesMealID = 0;
+                KiddiesMealID = null;
             } 
             else{
-                KiddiesMealID = resKidFood.getInt(1);
+                while(resKidFood.next()){
+                    KiddiesMealID = resKidFood.getInt(1);
+                }
             }
             selectSql = "SELECT ClientID FROM [dbo].[Client] WHERE Name = \'"+name+"\';";
             ResultSet resClient = statement.executeQuery(selectSql);
             if (!resClient.isBeforeFirst() ) {
-                client = 0;
+                client = null;
             } 
             else{
-                client = resClient.getInt(1);
+                while(resClient.next()){
+                    client = resClient.getInt(1);
+                }
             }
             selectSql = "SELECT DecorID FROM [dbo].[Decorations] WHERE Description = \'"+decor+"\';";
             ResultSet resDecor = statement.executeQuery(selectSql);
             if (!resDecor.isBeforeFirst() ) {
-                DecorID = 0;
+                DecorID = null;
             } 
             else{
-                DecorID = resDecor.getInt(1);
+                while(resDecor.next()){
+                    DecorID = resDecor.getInt(1);
+                }
             }
             String updateSQL = "INSERT INTO [dbo].[Event] (Description, UnitPrice) VALUES (\'"+eventtype+"\', "+price+");";
             statement.executeUpdate(updateSQL);
             selectSql = "SELECT EventID FROM [dbo].[Event] WHERE Description = \'"+eventtype+"\' AND Unitprice = "+price+";";
             ResultSet resEventID = statement.executeQuery(selectSql);
             if (!resEventID.isBeforeFirst() ) {
-                EventID = 0;
+                EventID = null;
             } 
             else{
-                EventID = resEventID.getInt(1);
+                while(resEventID.next()){
+                    EventID = resEventID.getInt(1);
+                }
             }
             updateSQL = "INSERT INTO [dbo].[Bookings] (ClientID, Confirmation, DateTime, VenueAddress, TotalAdults, TotalKids, AdultMealID, KiddiesMealID, DecorID, EventID)"
-            +" VALUES ("+client+", "+confirmed+", \'"+date+"\', \'"+address+"\', "+numberOfAdults+", "+numberOfkids+", "+AdultMealID+", "+KiddiesMealID+", "+DecorID+", "+EventID+");";
+            +" VALUES ("+client+", \'"+confirmed+"\', \'"+date+"\', \'"+address+"\', "+numberOfAdults+", "+numberOfkids+", "+AdultMealID+", "+KiddiesMealID+", "+DecorID+", "+EventID+");";
+            statement.executeUpdate(updateSQL);
             connection.close();
+            System.out.println("Event and Booking Added");
         }
             catch (SQLException e){
                 System.out.println("its not working");

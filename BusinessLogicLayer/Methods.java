@@ -41,7 +41,7 @@ public class Methods {
       database.clientAdd(n, s, c);//calling method in data link layer
    }
 
-   public void getEvent(String eventtype,double price,String address,String foodeselection,String decor,String date,int numberofpeople,int numberOfkids,int numberOfAdults,boolean confirmed, String name){
+   public void getEvent(String eventtype,double price,String address,String foodeselection,String decor,String date,int numberofpeople,int numberOfkids,int numberOfAdults,char confirmed, String name){
       database.eventAdd(eventtype, price, address, foodeselection, decor, date, numberofpeople, numberOfkids, numberOfAdults, confirmed, name);
    }
 

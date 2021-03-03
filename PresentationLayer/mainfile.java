@@ -71,7 +71,7 @@ public static void main(String[] args) {
             if (confirmAns.equalsIgnoreCase("yes"))
             {
                 double price = 1000.00;
-                boolean confirmed = true;
+                char confirmed = 'Y';
                 //Validating if the user provided adequete information and adding it to a list
                 if (method.ClientValidate(name, surname, cellnum) == true) {
                     method.getClient(name, surname, cellnum); //Calling Method in business logic layer
@@ -79,7 +79,7 @@ public static void main(String[] args) {
                     System.out.println("Empty fields or incorrect cellphone number format");
                 }
                 
-                method.getEvent(eventtype, price, address, foodselection, decor, date, numberOfpeople,numOfKids, numOfAdult, confirmed, name);
+                method.getEvent(eventtype, price, address, foodselection, decor, date, numberOfpeople, numOfKids, numOfAdult, confirmed, name);
 
                 
             }
