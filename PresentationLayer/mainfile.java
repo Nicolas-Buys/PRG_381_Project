@@ -25,13 +25,6 @@ public static void main(String[] args) {
         
         System.out.println("Please provide your cellphone number");
         String cellnum = input.nextLine();
-
-        //Validating if the user provided adequete information and adding it to a list
-        if (method.ClientValidate(name, surname, cellnum) == true) {
-            method.getClient(name, surname, cellnum); //Calling Method in business logic layer
-        } else {
-            System.out.println("Empty fields or incorrect cellphone number format");
-        }
         
         System.out.println("===============| Welcome |===============");
         System.out.println("Do you want to place a booking? (yes/no)");
@@ -81,6 +74,13 @@ public static void main(String[] args) {
                 boolean confirmed = true;
                 
                 method.getEvent(eventtype,price, address, foodselection, decor, date, numberOfpeople,numOfKids, numOfAdult, confirmed);
+
+                        //Validating if the user provided adequete information and adding it to a list
+                if (method.ClientValidate(name, surname, cellnum) == true) {
+                    method.getClient(name, surname, cellnum); //Calling Method in business logic layer
+                } else {
+                    System.out.println("Empty fields or incorrect cellphone number format");
+                }
                 
             }
            
@@ -93,14 +93,7 @@ public static void main(String[] args) {
             System.out.println("Thank you for the response!");
             System.out.println("Enjoy the rest of your day!");
         }
-
-        
-
-       
     
-}
+    }
 
-        
-        
-        
 }
