@@ -30,9 +30,9 @@ public static void main(String[] args) {
         System.out.println("Do you want to place a booking? (yes/no)");
         
         String option = input.nextLine();
-
+        option.toUpperCase();
         //gathering information from the user if they want to place a booking
-        if(option.toUpperCase() == "YES"){
+        if(option == "YES"){
             System.out.println("===============| Booking |===============");
 
             System.out.println("Type of event? Wedding/ birthday parties etc.");
@@ -72,15 +72,15 @@ public static void main(String[] args) {
             {
                 double price = 1000.00;
                 boolean confirmed = true;
-                
-                method.getEvent(eventtype,price, address, foodselection, decor, date, numberOfpeople,numOfKids, numOfAdult, confirmed);
-
-                        //Validating if the user provided adequete information and adding it to a list
+                //Validating if the user provided adequete information and adding it to a list
                 if (method.ClientValidate(name, surname, cellnum) == true) {
                     method.getClient(name, surname, cellnum); //Calling Method in business logic layer
                 } else {
                     System.out.println("Empty fields or incorrect cellphone number format");
                 }
+                
+                method.getEvent(eventtype, price, address, foodselection, decor, date, numberOfpeople,numOfKids, numOfAdult, confirmed, name);
+
                 
             }
            

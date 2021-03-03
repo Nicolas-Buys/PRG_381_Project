@@ -42,12 +42,28 @@ public class Database {
                 e.printStackTrace();
             }     
     }
-    public void eventAdd(String eventtype,double price,String foodeselection,String decor,String date,String numberofpeople,String numberOfkids,boolean confirmed){
+    public void eventAdd(String eventtype,double price,String address,String foodeselection,String decor,String date,int numberofpeople,int numberOfkids,int numberOfAdults,boolean confirmed, String name){
         try (Connection connection = DriverManager.getConnection(connectionUrl);
         Statement statement = connection.createStatement();){
-            String selectSql = "INSERT INTO [dbo].[Bookings] () VALUES ();";
-            int res = statement.executeUpdate(selectSql);
-            System.out.println("Booking added. "+res+" row(s) updated");
+            String selectSql = "SELECT AdultMealID FROM [dbo].[AdultMeals] WHERE Description = \'"+foodeselection+"\';";
+            ResultSet resAdultFood = statement.executeQuery(selectSql);
+            selectSql = "SELECT KiddiesMealID FROM [dbo].[KiddiesMeals] WHERE Description = \'"+foodeselection+"\';";
+            ResultSet resKidFood = statement.executeQuery(selectSql);
+            selectSql = "SELECT ClientID FROM [dbo].[Client] WHERE Name = \'"+name+"\';";
+            ResultSet resClient = statement.executeQuery(selectSql);
+            selectSql = "SELECT DecorID FROM [dbo].[Decorations] WHERE Description = \'"+decor+"\';";
+            ResultSet resDecor = statement.executeQuery(selectSql);
+            int client = resClient.getInt(1);
+            int AdultMealID = resAdultFood.getInt(1);
+            int KiddiesMealID = resKidFood.getInt(1);
+            int DecorID = resDecor.getInt(1);
+            String updateSQL = "INSERT INTO [dbo].[Event] (Description, UnitPrice) VALUES (\'"+eventtype+"\', "+price+");";
+            statement.executeUpdate(updateSQL);
+            selectSql = "SELECT EventID FROM [dbo].[Event] WHERE Description = \'"+eventtype+"\' AND Unitprice = "+price+";";
+            ResultSet resEventID = statement.executeQuery(selectSql);
+            int EventID = resEventID.getInt(1);
+            updateSQL = "INSERT INTO [dbo].[Bookings] (ClientID, Confirmation, DateTime, VenueAddress, TotalAdults, TotalKids, AdultMealID, KiddiesMealID, DecorID, EventID)"
+            +" VALUES ("+client+", "+confirmed+", \'"+date+"\', \'"+address+"\', "+numberOfAdults+", "+numberOfkids+", "+AdultMealID+", "+KiddiesMealID+", "+DecorID+", "+EventID+");";
             connection.close();
         }
             catch (SQLException e){
