@@ -47,21 +47,47 @@ public class Database {
         Statement statement = connection.createStatement();){
             String selectSql = "SELECT AdultMealID FROM [dbo].[AdultMeals] WHERE Description = \'"+foodeselection+"\';";
             ResultSet resAdultFood = statement.executeQuery(selectSql);
-            selectSql = "SELECT KiddiesMealID FROM [dbo].[KiddiesMeals] WHERE Description = \'"+foodeselection+"\';";
+            int AdultMealID, KiddiesMealID, client, DecorID, EventID;
+            if (!resAdultFood.isBeforeFirst() ) {
+                AdultMealID = 0;
+            } 
+            else{
+                AdultMealID = resAdultFood.getInt(1);
+            }
+            selectSql = "SELECT KiddiesMealID FROM [dbo].[KiddiesMeal] WHERE Description = \'"+foodeselection+"\';";
             ResultSet resKidFood = statement.executeQuery(selectSql);
+            if (!resKidFood.isBeforeFirst() ) {
+                KiddiesMealID = 0;
+            } 
+            else{
+                KiddiesMealID = resKidFood.getInt(1);
+            }
             selectSql = "SELECT ClientID FROM [dbo].[Client] WHERE Name = \'"+name+"\';";
             ResultSet resClient = statement.executeQuery(selectSql);
+            if (!resClient.isBeforeFirst() ) {
+                client = 0;
+            } 
+            else{
+                client = resClient.getInt(1);
+            }
             selectSql = "SELECT DecorID FROM [dbo].[Decorations] WHERE Description = \'"+decor+"\';";
             ResultSet resDecor = statement.executeQuery(selectSql);
-            int client = resClient.getInt(1);
-            int AdultMealID = resAdultFood.getInt(1);
-            int KiddiesMealID = resKidFood.getInt(1);
-            int DecorID = resDecor.getInt(1);
+            if (!resDecor.isBeforeFirst() ) {
+                DecorID = 0;
+            } 
+            else{
+                DecorID = resDecor.getInt(1);
+            }
             String updateSQL = "INSERT INTO [dbo].[Event] (Description, UnitPrice) VALUES (\'"+eventtype+"\', "+price+");";
             statement.executeUpdate(updateSQL);
             selectSql = "SELECT EventID FROM [dbo].[Event] WHERE Description = \'"+eventtype+"\' AND Unitprice = "+price+";";
             ResultSet resEventID = statement.executeQuery(selectSql);
-            int EventID = resEventID.getInt(1);
+            if (!resEventID.isBeforeFirst() ) {
+                EventID = 0;
+            } 
+            else{
+                EventID = resEventID.getInt(1);
+            }
             updateSQL = "INSERT INTO [dbo].[Bookings] (ClientID, Confirmation, DateTime, VenueAddress, TotalAdults, TotalKids, AdultMealID, KiddiesMealID, DecorID, EventID)"
             +" VALUES ("+client+", "+confirmed+", \'"+date+"\', \'"+address+"\', "+numberOfAdults+", "+numberOfkids+", "+AdultMealID+", "+KiddiesMealID+", "+DecorID+", "+EventID+");";
             connection.close();

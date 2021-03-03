@@ -30,9 +30,9 @@ public static void main(String[] args) {
         System.out.println("Do you want to place a booking? (yes/no)");
         
         String option = input.nextLine();
-        option.toUpperCase();
+        //option.toUpperCase();
         //gathering information from the user if they want to place a booking
-        if(option == "YES"){
+        if(option.equalsIgnoreCase("YES")){
             System.out.println("===============| Booking |===============");
 
             System.out.println("Type of event? Wedding/ birthday parties etc.");
@@ -59,7 +59,7 @@ public static void main(String[] args) {
             System.out.println("Any decorations?(yes/no)");
             String decor = input.nextLine();
             String decorAdded;
-            if (decor.toUpperCase() == "YES") {
+            if (decor.equalsIgnoreCase("YES")) {
                 System.out.println("What decorations do you want to add?");
                 decorAdded = input.nextLine();
             } else {
@@ -68,7 +68,7 @@ public static void main(String[] args) {
 
             System.out.println("Do you want to confirm your booking?(yes/no)");
             String confirmAns= input.nextLine();
-            if (confirmAns.equals("yes"))
+            if (confirmAns.equalsIgnoreCase("yes"))
             {
                 double price = 1000.00;
                 boolean confirmed = true;
