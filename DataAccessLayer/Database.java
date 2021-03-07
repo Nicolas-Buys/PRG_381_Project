@@ -6,7 +6,7 @@ import java.util.List;
 import java.lang.*;
 
 public class Database {
-    String connectionUrl = "jdbc:sqlserver://105.186.136.224:1433;"
+    String connectionUrl = "jdbc:sqlserver://105.224.108.126:1433;"
     + "instanceName=mssqlserver;"
     + "user=sa;"
     + "password=PRG381Project;"
